@@ -1,0 +1,25 @@
+Project notes
+
+Upper saxon
+* transducer from standard german to upper saxon (Khan et al 2013)
+
+* upper saxon lacks voicing contrast in obstruents
+
+b -> p
+d -> t
+
+* Fricatives /f s ʃ X/  and obstruents /p t k/ are only (sometimes) voiced between sonorants (p. 232 ff)
+* never voiced word- initially or finally
+
+Clusters
+* In initial clusters with /l/, stops /t k/ do not contrast and can vary freely (p 234)
+/kl/ -> /tl/
+* final -ig/-ich/-isch in standard german becomes a /ʃ/-cluster (p 234)
+
+syllabic consonants
+* final nasals and laterals are syllabic following a stop or fricative): /ˈɔˁːpae̯tn̩/ arbeiten (p 235)
+* syllabic nasals share the place of the preceeding consonant /ˈhɛlfm̩/ helfen
+* when the vowel before the two final consonants is long, the first consonsnt is deleted:  /ˈpɛːpm̩/ beben ‘to shake’ pronounced [pɛːm] 
+
+TODO
+* vowels
