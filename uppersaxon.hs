@@ -6,17 +6,7 @@ module UpperSaxon where
 
 import Dfst
 import Data.Maybe
--- import IPA
---import IPA_Test
---import Data.Maybe
 
--- data set 1: upper saxon lacks voicing contrast in obstruents
--- Gasse: ˈgʌsə --> ˈkʌsə
--- Damm: dʌm --> tʌm
--- bellt: bɛlt --> pɛlt
-
--- Fricatives /f s ʃ X/  and obstruents /p t k/ are only (sometimes) voiced between sonorants (p. 232 ff)
--- never voiced word- initially or finally
 
 sonorant s = vowel s || (s == 'm') || (s == 'n') || (s == 'ŋ') || (s == 'l') || (s == 'r') || (s == 'j') || (s == 'w') 
 notSonorant = not . sonorant
@@ -35,10 +25,6 @@ unvoice obstruent
 saxonize :: String -> String
 saxonize [] = []
 saxonize (x:xs) = unvoice x:saxonize xs
-
-
-
-
 
 -- 3 transducer: 
 -- 1.: fricative und obstruenten werden stimmlos, außer wenn sie zwischen 2 sonoranten stehen 
@@ -105,8 +91,6 @@ cluster = mkForwardTransducer states ['a'..'z'] ['a'..'z'] C_Zero [] delta final
    delta C_SeenNone c = Just (C_SeenNone, [c])
    delta (C_SeenFinal b) c | (==) 'i' c = Just(C_SeenI, "")
                            | otherwise = Just (C_SeenNone, [b,c])
-
-                
                  
 -- testing: (transduce rmVoicing) input1
 input1 = "der hund bellt"
