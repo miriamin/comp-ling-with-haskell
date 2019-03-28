@@ -44,11 +44,11 @@ saxonize (x:xs) = unvoice x:saxonize xs
 -- 1.: fricative und obstruenten werden stimmlos, außer wenn sie zwischen 2 sonoranten stehen 
 -- 2 states: 1. seenSonorant 2. notSeenSonorant
  
-{-
-data SonorStates = Zero | SeenSon | AfterSon
 
-rmVoicing:: ForwardTrans SonorStates Char String
-rmVoicing = mkForwardTransducer states ['a'..'z'] ['a'..'z'] Zero "" delta finalStates
+data SonorStates = Zero | SeenSon | AfterSon Char
+
+{-rmVoicing':: ForwardTrans SonorStates Char String
+rmVoicing' = mkForwardTransducer states ['a'..'z'] ['a'..'z'] Zero "" delta finalStates
   where
     states = (Zero : SeenSon : [AfterSon c | c <- ['a'..'z'], sonorant c])
     finalStates (AfterSon c) = Just[c]
