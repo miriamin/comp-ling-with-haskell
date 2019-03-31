@@ -1,7 +1,10 @@
-
--- Suffix ordering in English morphology: A bottom up tree acceptor
-
 {-
+
+Miriam Amin
+MN: 3750251
+
+Suffix ordering in English morphology: A bottom up tree acceptor
+
 This project is a bottom up tree acceptor to describe the contraints in level ordering for english suffixes.
 
 
@@ -26,8 +29,8 @@ Class II suffixes: -ness, -less, -hood, -ful, -ly, -y, -like, -ist, -able, -ize,
 
 
 The generalization about the order in which these suffixes appear is that class 1 (or level 1) suffixes are first 
-attached to the stem and then class 2(or level 2) affixes are attaches. That means, that level 1 affixes cannot 
-attach to a word  to which a level 2 affix has already been attached. Level 1 - leve 1 and level 2 - level 2 combinations
+attached to the stem and then class 2(or level 2) affixes are attached. That means that level 1 affixes cannot 
+attach to a word to which a level 2 affix has already been attached. Level 1 - leve 1 and level 2 - level 2 combinations
 are valid. 
 
  

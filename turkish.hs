@@ -1,14 +1,15 @@
 {-
+Miriam Amin
+MN: 3750251
+
 A string acceptor for Turkish phonological rules
 ------------------------------------------------
 
-
-
 This project is a deterministic finite state acceptor for selected phonological rules in standard Turkish.
-The machine is able to accept the well-formedness of strings regarding final devoicing, vowel roundness harmnony
+The machine is able to accept the well-formedness of strings regarding final devoicing, vowel roundness harmony
 and the elemination of initial consonant clusters.
 
-First I define the phonems the automata need. The acceptor is working for orthographic as well as phonetic script.
+First I define the phonems the automata needs. The acceptor is working for orthographic as well as phonetic script.
 
 -}
 
@@ -72,9 +73,9 @@ finalDevoicing = ([0,1,2], alphabet, 0, [1], d)
 Turkish knows two types of vowel harmony: fronting/backness harmony and roundedness harmony as for exmple described in 
 Göksel and Kerslake 2005 p. 21.
 In a range of languages vowels harmonize in different distinct features. Scholars argue that this assimilation process 
-is due to the economy of musculat effort (Lewis 2001 p.15f). 
-My automata recognizes vowel roundness harmony in Turkish. Roundedness harmony is a phonological process that determines the 
-roundedness of all vowels in one word depending of the roundedness of the first vowel. As a consequence, in every Turkish word,
+is due to the economy of muscular effort (Lewis 2001 p.15f). 
+My automata recognizes vowel roundedness harmony in Turkish. Roundedness harmony is a phonological process that determines the 
+roundedness of all vowels in one word depending of the roundedness of the first vowel. As a consequence, in every Turkish word
 all vowels agree in the feature of roundedness.  
 
 Unrounded vowels in Turkish: /e/, /i/, /a/, /ɯ/
@@ -140,17 +141,24 @@ rmInitialCons = ([0,1,2,99],alphabet,0,[1],d)
 Verification
 ---------
  
-Here is a function that takes one string and has it verfied by all three acceptors. It evaluated the input as True,
+Here is a function that takes one string and has it verfied by all three acceptors. It evaluates the input as True,
 when all automata accept the input. 
+
+example: 
+turkish "köyu" --> True
+turkish "köya" --> False
+turkish "stres" --> False
+turkish "sitres" --> True
+turkish "kitab" --> False
+turkish "kitap" --> True
+
 -}
 
 turkish :: [Char] -> Bool
 turkish xs = finalDevoicing `Main.recognizes` xs 
           && roundnessHarmony `Main.recognizes` xs 
           && rmInitialCons `Main.recognizes` xs             
-
-turkish2 :: [Char] -> Bool
-turkish2 xs = roundnessHarmony `Main.recognizes` xs   
+  
 
 {-
 References

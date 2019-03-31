@@ -1,4 +1,9 @@
 {-
+
+Miriam Amin
+MN: 3750251
+
+
 A string transducer for Upper Saxon phonology
 --------------------
 
