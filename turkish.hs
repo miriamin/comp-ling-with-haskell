@@ -151,3 +151,12 @@ turkish xs = finalDevoicing `Main.recognizes` xs
 
 turkish2 :: [Char] -> Bool
 turkish2 xs = roundnessHarmony `Main.recognizes` xs   
+
+{-
+References
+
+Geoffrey Lewis, 2002: Turkish Grammar. 2nd edition, Oxford University Press.
+
+Aslı Göksel and Celia Kerslake, 2005: Turkish: A comprehensive grammar. Routledge. 
+
+-}
